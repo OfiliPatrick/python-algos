@@ -1,6 +1,4 @@
-
 # with memoization
-
 def fib1(n):
     memo_cache = {}
     def helper(n):
@@ -18,9 +16,7 @@ def fib1(n):
 
     return helper(n)
 
-
 #without memoization
-
 def fib2(n):
     if n == 1 or n == 2:
         return 1 

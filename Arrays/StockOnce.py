@@ -1,8 +1,8 @@
 #sell at the smallest minimum cost price last seen
 
 def stockOnce(arr):
-    min_cost = arr[0]
-    max_profit = -float("inf")
+    min_cost = float('inf')
+    max_profit = 0 
     for price in arr:
         #get last_seen minimum cost
         min_cost = min(min_cost, price)

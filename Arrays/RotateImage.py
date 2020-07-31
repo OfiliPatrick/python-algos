@@ -16,7 +16,7 @@ def rotImg(arr):
             first += 1
             last-=1
     transpose(arr)
-    switch(arr)
+    # switch(arr)
     return arr
 
 arr = [[1, 2, 3],

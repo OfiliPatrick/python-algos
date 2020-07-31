@@ -1,6 +1,5 @@
 # simulate the multiplication of two nums in array form
 def multiply(arr1, arr2):
-    \
     if arr1[0] > 0 and arr2[0] > 0:
         prefix = 1
     else:
