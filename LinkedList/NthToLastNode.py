@@ -3,33 +3,43 @@ class Head(object):
         self.data = data
         self.next = None
 
-def removeNthFromEnd(self, head, n):    
-    def delete(head):
-        final = head
-        pos =0
-        if n == 1:
-            head = head.next
-            return head
-        while head:
-            pos+=1  
-            if pos == n-1:
-                node_after_next = head.next.next
-                head.next = node_after_next
-            head = head.next           
-        return final
+def printAll(head):
+    while head:
+        print(head.data)
+        head= head.next      
+        
+    """
+ 0->1->2->3->4
+                ^
+           ^    
+ => 1->2->4
 
-    def reverse(head):
-        if head == None:
-            return None
-        if head.next==None:
-            return head 
-        last_seen = None
-        while head:
-            temp = head.next
-            head.next = last_seen
-            last_seen = head
-            head = temp
-            
-        return last_seen
-             
-    return reverse(delete(reverse(head)))
+    """
+
+def nthToLast(head, n=2):   
+    dummy_head = ListNode(0)
+    dummy_head.next = head
+    fast = dummy_head
+    slow = dummy_head
+    
+    for i in range(n):         
+        if fast == None:
+            break        
+        fast = fast.next
+                
+    while fast.next:
+        fast = fast.next
+        slow = slow.next
+        
+    slow.next = slow.next.next
+    
+    return dummy_head.next 
+
+
+LinkedList = Head(1)
+LinkedList.next = Head(2)
+LinkedList.next.next = Head(3)
+LinkedList.next.next.next = Head(4)
+LinkedList.next.next.next.next = Head(5)
+
+print(nthToLast(LinkedList))

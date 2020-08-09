@@ -16,9 +16,7 @@ def func(root):
         
         left = traverse(root.left)
         right = traverse(root.right)
-
-        return left or right
-
+        
     traverse(root) 
     return output
 
@@ -39,7 +37,7 @@ tree.right.right = Node(14)
 print(func(tree ))
 
 
-# tree = Node(4)                
+# tree = Node(4)               
 # tree.left = Node(2)
 # tree.right = Node(7)
 # tree.left.left = Node(1)
@@ -48,21 +46,4 @@ print(func(tree ))
 # tree.right.right = Node(9)
 
 
-def permute(s):
-  res=[]
-  seen={}
-  def bt(s,temp):
-    if len(temp)==len(s):
-      res.append(temp)
-    else:
-      for i in range(len(s)):
-        if not seen.get(i,False):
-          temp+=s[i]
-          seen[i]=True
-          bt(s,temp)
-          del seen[i]
-          temp = temp[:len(temp)-1]
-  bt(s,'')
-  return res
 
-             
